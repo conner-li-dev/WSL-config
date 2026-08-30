@@ -13,6 +13,7 @@ return {
         },
     },
     opts = {
+        auto_install =  true,
         ensure_installed = {
             'c',
             'lua',
@@ -20,7 +21,7 @@ return {
             'javascript',
             'typescript',
             'glsl',
-            'tmux',
+            'python',
         },
     },
 }

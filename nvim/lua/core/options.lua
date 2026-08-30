@@ -37,6 +37,12 @@ vim.diagnostic.config({
 vim.filetype.add({
     extension = {
         tmux = 'tmux',
+        vert = 'glsl',
+        tesc = 'glsl',
+        tese = 'glsl',
+        geom = 'glsl',
+        frag = 'glsl',
+        comp = 'glsl',
     }
 })
 

@@ -13,6 +13,14 @@ vim.lsp.config('clangd', {
     root_markers = { '.root', ".clangd", ".clang-tidy", ".clang-format", "compile_commands.json", "compile_flags.txt", "configure.ac", ".git" },
 })
 
+vim.lsp.config('basedpyright', {
+    root_markers = {'.root', '.venv', 'venv', '.git'},
+    settings = {
+        venvPath = ".",
+        venv = ".venv",
+    },
+})
+
 return {
     "mason-org/mason-lspconfig.nvim",
     dependencies = {
