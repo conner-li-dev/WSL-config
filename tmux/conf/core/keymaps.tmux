@@ -28,9 +28,9 @@ bind -n M-J switchc -p
 bind -n M-K switchc -n
 
 # pane editing
-bind -n M-n split-window
-bind -n M-v split-window -h
-bind -n M-x kill-pane
+bind -n M-n split-window -v -c "#{pane_current_path}"
+bind -n M-v split-window -h -c "#{pane_current_path}" 
+bind -n M-x kill-pane \; movew -r
 bind -n M-m select-pane -m
 bind -n M-b join-pane
 
@@ -41,4 +41,4 @@ bind -n M-Right resize-pane -R
 
 # window editing
 bind -n M-c new-window -a
-bind -n M-X kill-window
+bind -n M-X kill-window \; movew -r
