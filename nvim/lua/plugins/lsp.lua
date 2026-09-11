@@ -21,6 +21,12 @@ vim.lsp.config('basedpyright', {
     },
 })
 
+vim.lsp.config('eslint', {
+    settings = {
+        run = "onSave",
+    }
+})
+
 return {
     "mason-org/mason-lspconfig.nvim",
     dependencies = {

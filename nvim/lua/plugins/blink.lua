@@ -37,7 +37,23 @@ return {
         },
 
         -- (Default) Only show the documentation popup when manually triggered
-        completion = { documentation = { auto_show = false } },
+        completion = {
+            keyword = { range = 'prefix' },
+            trigger = {
+                prefetch_on_insert = true,
+            },
+
+            documentation = {
+                auto_show = true,
+                auto_show_delay_ms = 250,
+                treesitter_highlighting = true,
+                window = { border = 'rounded' },
+            },
+
+            list = {
+                max_items = 20,
+            },
+        },
 
         -- Default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -49,6 +65,13 @@ return {
                     module = "lazydev.integrations.blink",
                     -- make lazydev completions top priority (see `:h blink.cmp`)
                     score_offset = 100,
+                },
+                snippets = {
+                    name = "Snippets",
+                    module = 'blink.cmp.sources.snippets',
+                    opts = {
+                        max_items = 20,
+                    },
                 },
             },
         },
