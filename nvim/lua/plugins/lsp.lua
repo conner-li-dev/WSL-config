@@ -1,5 +1,5 @@
 vim.lsp.config('jdtls', {
-    root_markers = {  '.root', 'mvnw', 'gradlew', 'settings.gradle', 'settings.gradle.kts', '.git', 'build.xml', 'pom.xml', 'build.gradle', 'build.gradle.kts' },
+    root_markers = { '.root', 'mvnw', 'gradlew', 'settings.gradle', 'settings.gradle.kts', '.git', 'build.xml', 'pom.xml', 'build.gradle', 'build.gradle.kts' },
     settings = {
         java = {
             project = {
@@ -14,7 +14,7 @@ vim.lsp.config('clangd', {
 })
 
 vim.lsp.config('basedpyright', {
-    root_markers = {'.root', '.venv', 'venv', '.git'},
+    root_markers = { '.root', '.venv', 'venv', '.git' },
     settings = {
         venvPath = ".",
         venv = ".venv",
@@ -25,6 +25,10 @@ vim.lsp.config('eslint', {
     settings = {
         run = "onSave",
     }
+})
+
+vim.lsp.config('verible', {
+    cmd = { 'verible-verilog-ls', '--indentation_spaces', '4' },
 })
 
 return {
@@ -40,8 +44,20 @@ return {
     config = function()
         require("mason").setup()
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls" },
+            ensure_installed = {
+                'html',
+                'cssls',
+                'jdtls',
+                'vtsls',
+                'clangd',
+                'eslint',
+                'lua_ls',
+                'verible',
+                'tailwindcss',
+                'basedpyright',
+                'glsl_analyzer',
+            },
             automatic_installation = true,
-    })
+        })
     end,
 }
