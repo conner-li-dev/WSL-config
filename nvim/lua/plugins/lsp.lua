@@ -27,9 +27,21 @@ vim.lsp.config('eslint', {
     }
 })
 
-vim.lsp.config('verible', {
-    cmd = { 'verible-verilog-ls', '--indentation_spaces', '4' },
-})
+---@type vim.lsp.Config
+vim.lsp.config.verible = {
+    cmd = { 'verible-verilog-ls',
+        '--ruleset=none',
+        '--rules_config_search=false',
+        '--indentation_spaces', '4' },
+    on_attach = function(client)
+        client.server_capabilities.hoverProvider = false
+        client.server_capabilities.definitionProvider = false
+        client.server_capabilities.referencesProvider = false
+        client.server_capabilities.documentHighlightProvider = false
+
+        client.server_capabilities.documentFormattingProvider = true
+    end
+}
 
 return {
     "mason-org/mason-lspconfig.nvim",
@@ -55,6 +67,7 @@ return {
                 'verible',
                 'tailwindcss',
                 'basedpyright',
+                'slang_server',
                 'glsl_analyzer',
             },
             automatic_installation = true,
