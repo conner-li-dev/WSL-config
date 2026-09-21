@@ -28,6 +28,17 @@ vim.lsp.config('eslint', {
 })
 
 ---@type vim.lsp.Config
+vim.lsp.config.ruff = {
+    init_options = {
+        settings = {
+            lint = {
+                enable = false,
+            },
+        }
+    }
+}
+
+---@type vim.lsp.Config
 vim.lsp.config.verible = {
     cmd = { 'verible-verilog-ls',
         '--ruleset=none',
@@ -74,6 +85,7 @@ return {
                 'basedpyright',
                 'slang_server',
                 'glsl_analyzer',
+                'ruff',
             },
             automatic_installation = true,
         })
