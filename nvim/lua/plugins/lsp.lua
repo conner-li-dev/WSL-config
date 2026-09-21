@@ -43,6 +43,11 @@ vim.lsp.config.verible = {
     end
 }
 
+---@type.lsp.Config
+vim.lsp.config.html = {
+    filetypes = { 'html', 'htmldjango' },
+}
+
 return {
     "mason-org/mason-lspconfig.nvim",
     dependencies = {
