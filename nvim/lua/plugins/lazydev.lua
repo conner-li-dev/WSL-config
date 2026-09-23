@@ -8,6 +8,7 @@ return {
             { path = 'lazydev.nvim', words = { 'lazydev', } },
             { path = 'gitsigns.nvim', words = { 'Gitsigns', 'gitsigns', } },
             { path = 'neo-tree.nvim', words = { 'neo-tree', 'neotree', } },
+            { path = 'markview.nvim', words = { 'markview' } },
         }
     },
 }

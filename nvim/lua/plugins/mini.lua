@@ -22,6 +22,8 @@ return {
             },
 
             clues = {
+                { mode = 'n', keys = '<leader>t', desc = '+Telescope' },
+
                 miniclue.gen_clues.builtin_completion(),
                 miniclue.gen_clues.g(),
                 miniclue.gen_clues.windows(),

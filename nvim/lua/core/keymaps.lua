@@ -20,9 +20,9 @@ map('n', '<leader>fb', '<cmd>lua vim.lsp.buf.format()<cr>', { desc = '[F]ormat C
 -- Telescope Keymaps
 local telescope = require('telescope.builtin')
 
-map('n', '<leader>tff', telescope.find_files, { desc = '[F]ind [F]iles' })
-map('n', '<leader>tlg', telescope.live_grep, { desc = '[L]ive [G]rep' })
-map('n', '<leader>tbf', telescope.current_buffer_fuzzy_find, { desc = '[B]uffer [F]ind' })
+map('n', '<leader>tf', telescope.find_files, { desc = '[F]ind [F]iles' })
+map('n', '<leader>tg', telescope.live_grep, { desc = 'Live [G]rep' })
+map('n', '<leader>tb', telescope.current_buffer_fuzzy_find, { desc = '[B]uffer find' })
 
 
 -- Neotree Keymaps
@@ -38,3 +38,5 @@ map('n', '<M-j>', ':TmuxNavigateDown<CR>')
 map('n', '<M-k>', ':TmuxNavigateUp<CR>')
 map('n', '<M-l>', ':TmuxNavigateRight<CR>')
 
+-- Markview Keymaps
+map('n', '<leader>mt', ':Markview toggle<CR>', { desc = '[M]arkview [T]oggle for buffer' })
