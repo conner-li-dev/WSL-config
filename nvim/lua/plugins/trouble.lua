@@ -1,7 +1,13 @@
 ---@type LazyPluginSpec
 return {
     'folke/trouble.nvim',
-    opts = {},
+    opts = {
+        modes = {
+            symbols = {
+                win = { position = "right", size = { width = 0.3 } },
+            },
+        },
+    },
     cmd = 'Trouble',
     keys = {
         {
