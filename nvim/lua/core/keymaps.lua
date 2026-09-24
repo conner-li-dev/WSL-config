@@ -39,4 +39,4 @@ map('n', '<M-k>', ':TmuxNavigateUp<CR>')
 map('n', '<M-l>', ':TmuxNavigateRight<CR>')
 
 -- Markview Keymaps
-map('n', '<leader>mt', ':Markview toggle<CR>', { desc = '[M]arkview [T]oggle for buffer' })
+map('n', '<leader>mt', ':Markview splitToggle<CR>', { desc = '[M]arkview Split [T]oggle' })
